@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'">
+  <title>Agenda de Bufete Jurídico</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div class="acceso">
+    <section class="acceso-marca">
+      <div class="marca">
+        <img src="img/logo.svg" alt="">
+        <div><strong>Agenda</strong><span>de Bufete Jurídico</span></div>
+      </div>
+
+      <div class="acceso-centro">
+        <h1>Ningún plazo<br>se queda atrás.</h1>
+        <p>Plazos, expedientes y audiencias del despacho, ordenados por urgencia en un solo lugar.</p>
+        <div class="vista-previa" aria-hidden="true">
+          <div class="vp-titulo">Radar de vencimientos</div>
+          <div class="vp-fila rojo"><i></i><div><b>Contestar la demanda</b><small>Exp. 245/2026 · Familiar</small></div><em>Hoy</em></div>
+          <div class="vp-fila naranja"><i></i><div><b>Ofrecer pruebas</b><small>Exp. 118/2026 · Mercantil</small></div><em>5 días</em></div>
+          <div class="vp-fila verde"><i></i><div><b>Presentar alegatos</b><small>Exp. 310/2026 · Civil</small></div><em>12 días</em></div>
+        </div>
+      </div>
+
+      <div class="acceso-pie">Uso exclusivo del personal del despacho</div>
+    </section>
+
+    <section class="acceso-formulario">
+      <!-- Inicio de sesión (DFR 1.6) -->
+      <form id="form-login" class="tarjeta-acceso formulario" hidden>
+        <div><h2>Inicia sesión</h2><p class="subtitulo">Entra con tu cuenta del despacho.</p></div>
+        <label>Usuario o correo <input type="email" name="correo" placeholder="nombre@despacho.mx" autocomplete="username"></label>
+        <label>Contraseña <input type="password" name="contrasena" placeholder="••••••••" autocomplete="current-password"></label>
+        <label>Tipo de usuario
+          <select name="tipo">
+            <option value="Abogado">Abogado (Administrador)</option>
+            <option value="Pasante">Pasante (Practicante)</option>
+          </select>
+        </label>
+        <button type="submit" class="boton">Iniciar sesión</button>
+        <button type="button" id="olvide" class="enlace">¿Olvidaste tu contraseña?</button>
+        <p class="mensaje" data-msg></p>
+      </form>
+
+      <!-- Primera ejecución: cuenta del Abogado (DFR 1.1) -->
+      <form id="form-primer" class="tarjeta-acceso ancha formulario" hidden>
+        <div><h2>Bienvenido</h2><p class="subtitulo">Es la primera vez que se usa el sistema: crea la cuenta del Abogado.</p></div>
+        <div class="fila">
+          <label>Nombre (s) <input name="nombre"></label>
+          <label>Apellido Paterno <input name="apellido_paterno"></label>
+        </div>
+        <div class="fila">
+          <label>Apellido Materno <span class="opcional">(opcional)</span><input name="apellido_materno"></label>
+          <label>Teléfono <input name="telefono" maxlength="10" inputmode="numeric" placeholder="10 dígitos"></label>
+        </div>
+        <label>Correo electrónico <input type="email" name="correo" placeholder="nombre@despacho.mx"></label>
+        <div class="fila">
+          <label>Contraseña <input type="password" name="contrasena"></label>
+          <label>Confirmación <input type="password" name="confirmacion"></label>
+        </div>
+        <p class="ayuda">Mínimo 8 caracteres, con letras y números.</p>
+        <button type="submit" class="boton">Crear cuenta de Abogado</button>
+        <p class="mensaje" data-msg></p>
+      </form>
+
+      <!-- Contraseña temporal: cree su nueva contraseña (DFR 1.10) -->
+      <form id="form-nueva" class="tarjeta-acceso formulario" hidden>
+        <div><h2>Cree su nueva contraseña</h2><p class="subtitulo">Entró con una contraseña temporal. Escriba una nueva para continuar.</p></div>
+        <label>Contraseña nueva <input type="password" name="nueva"></label>
+        <label>Confirmación <input type="password" name="confirmacion"></label>
+        <p class="ayuda">Mínimo 8 caracteres, con letras y números.</p>
+        <button type="submit" class="boton">Guardar y entrar</button>
+        <p class="mensaje" data-msg></p>
+      </form>
+    </section>
+  </div>
+
+  <script src="js/comun.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

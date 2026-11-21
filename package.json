@@ -1,0 +1,57 @@
+{
+  "name": "agenda-bufete-juridico",
+  "productName": "Agenda de Bufete Jurídico",
+  "version": "1.0.0",
+  "description": "Sistema de agenda, expedientes y radar de vencimientos para el Despacho Jurídico Basurto & Asociados",
+  "author": "MADIL",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "test": "node --test",
+    "datos-ejemplo": "node scripts/datos-ejemplo.js",
+    "build": "electron-builder --win --x64"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "exceljs": "^4.4.0",
+    "pdfkit": "^0.20.2"
+  },
+  "devDependencies": {
+    "electron": "^45.1.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "mx.madil.agendabufete",
+    "productName": "Agenda de Bufete Jurídico",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Agenda de Bufete Jurídico"
+    },
+    "npmRebuild": false
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}
